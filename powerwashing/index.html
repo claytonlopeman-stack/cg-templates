@@ -259,7 +259,7 @@
       flex: 1; position: relative;
       background-size: cover; background-position: center;
     }
-    .result-half.is-before { }
+    .result-half.is-before { filter: none; }
     .half-tag {
       position: absolute; top: 0.5rem; left: 0.5rem;
       font-family: var(--fh); font-size: 0.58rem; font-weight: 600;
@@ -531,44 +531,6 @@
 </head>
 <body>
 
-<!-- hidden SVG filter defs for before/after dirty simulation -->
-<svg xmlns="http://www.w3.org/2000/svg" style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true">
-  <defs>
-    <!-- Concrete: oily brown-gray grime patches -->
-    <filter id="f-concrete" color-interpolation-filters="sRGB" x="0" y="0" width="100%" height="100%">
-      <feTurbulence type="fractalNoise" baseFrequency="0.045 0.07" numOctaves="4" seed="3" result="noise"/>
-      <feColorMatrix type="matrix" in="noise"
-        values="0.65 0 0 0 0.10
-                0.45 0 0 0 0.07
-                0.20 0 0 0 0.02
-                0    0 0 1 0" result="stain"/>
-      <feBlend in="SourceGraphic" in2="stain" mode="multiply" result="blended"/>
-      <feColorMatrix type="saturate" values="0.38" in="blended"/>
-    </filter>
-    <!-- Siding: green algae / mildew streaks running down -->
-    <filter id="f-siding" color-interpolation-filters="sRGB" x="0" y="0" width="100%" height="100%">
-      <feTurbulence type="turbulence" baseFrequency="0.018 0.09" numOctaves="3" seed="7" result="noise"/>
-      <feColorMatrix type="matrix" in="noise"
-        values="0.18 0 0 0 0.03
-                0.65 0 0 0 0.13
-                0.18 0 0 0 0.03
-                0    0 0 1 0" result="algae"/>
-      <feBlend in="SourceGraphic" in2="algae" mode="multiply" result="blended"/>
-      <feColorMatrix type="saturate" values="0.5" in="blended"/>
-    </filter>
-    <!-- Deck: dark gray mold and water stain patches -->
-    <filter id="f-deck" color-interpolation-filters="sRGB" x="0" y="0" width="100%" height="100%">
-      <feTurbulence type="fractalNoise" baseFrequency="0.06 0.04" numOctaves="5" seed="11" result="noise"/>
-      <feColorMatrix type="matrix" in="noise"
-        values="0.28 0 0 0 0.04
-                0.38 0 0 0 0.06
-                0.20 0 0 0 0.04
-                0    0 0 1 0" result="mold"/>
-      <feBlend in="SourceGraphic" in2="mold" mode="multiply" result="blended"/>
-      <feColorMatrix type="saturate" values="0.22" in="blended"/>
-    </filter>
-  </defs>
-</svg>
 
 <!-- ── NAVBAR ── -->
 <nav class="navbar" id="navbar">
@@ -684,7 +646,7 @@
   <div class="results-grid">
     <div class="result-card">
       <div class="result-split">
-        <div class="result-half is-before" style="background-image:url('https://images.pexels.com/photos/27627775/pexels-photo-27627775.jpeg?auto=compress&cs=tinysrgb&w=500'); filter:url(#f-concrete) brightness(0.72) contrast(1.1);">
+        <div class="result-half is-before" style="background-image:url('https://images.pexels.com/photos/9990202/pexels-photo-9990202.jpeg?auto=compress&cs=tinysrgb&w=500');">
           <span class="half-tag">Before</span>
         </div>
         <div class="result-bar"></div>
@@ -700,23 +662,23 @@
 
     <div class="result-card">
       <div class="result-split">
-        <div class="result-half is-before" style="background-image:url('https://images.pexels.com/photos/12690165/pexels-photo-12690165.jpeg?auto=compress&cs=tinysrgb&w=500'); filter:url(#f-siding) brightness(0.68) contrast(1.08);">
+        <div class="result-half is-before" style="background-image:url('https://images.pexels.com/photos/4467931/pexels-photo-4467931.jpeg?auto=compress&cs=tinysrgb&w=500');">
           <span class="half-tag">Before</span>
         </div>
         <div class="result-bar"></div>
-        <div class="result-half" style="background-image:url('https://images.pexels.com/photos/12690165/pexels-photo-12690165.jpeg?auto=compress&cs=tinysrgb&w=500');">
+        <div class="result-half" style="background-image:url('https://images.pexels.com/photos/6177901/pexels-photo-6177901.jpeg?auto=compress&cs=tinysrgb&w=500');">
           <span class="half-tag">After</span>
         </div>
       </div>
       <div class="result-meta">
-        <p class="result-surface">Vinyl Siding — Soft Wash</p>
+        <p class="result-surface">Wood Siding — Soft Wash</p>
         <p class="result-note">Green algae streaks covering the north face. Low pressure, plant-safe detergent, fully gone.</p>
       </div>
     </div>
 
     <div class="result-card">
       <div class="result-split">
-        <div class="result-half is-before" style="background-image:url('https://images.pexels.com/photos/5467852/pexels-photo-5467852.jpeg?auto=compress&cs=tinysrgb&w=500'); filter:url(#f-deck) brightness(0.65) contrast(1.12);">
+        <div class="result-half is-before" style="background-image:url('https://images.pexels.com/photos/172278/pexels-photo-172278.jpeg?auto=compress&cs=tinysrgb&w=500');">
           <span class="half-tag">Before</span>
         </div>
         <div class="result-bar"></div>
