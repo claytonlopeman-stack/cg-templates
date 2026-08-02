@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>C&amp;G Scaling — Service Business Template Library</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #FAFAF9;
+    --card: #FFFFFF;
+    --ink: #1A1A18;
+    --ink-soft: #5C5B57;
+    --border: #E4E2DD;
+    --accent: #2B6E4F;
+    --live: #2B6E4F;
+    --soon: #A6A39B;
+    --ff: 'Inter', -apple-system, sans-serif;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: var(--ff);
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.5;
+  }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 72px 24px 96px; }
+  header { margin-bottom: 56px; }
+  .eyebrow {
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 14px;
+  }
+  h1 {
+    font-size: clamp(2rem, 4.5vw, 2.85rem);
+    font-weight: 800;
+    letter-spacing: -0.01em;
+    margin-bottom: 16px;
+  }
+  header p {
+    font-size: 1.05rem;
+    color: var(--ink-soft);
+    max-width: 640px;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 20px;
+  }
+  .card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 26px 24px;
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    transition: border-color .15s, transform .15s, box-shadow .15s;
+  }
+  a.card:hover {
+    border-color: var(--accent);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+  }
+  .card.soon { opacity: 0.55; cursor: default; }
+  .card-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .card-name {
+    font-size: 1.15rem;
+    font-weight: 700;
+  }
+  .status {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 4px 9px;
+    border-radius: 20px;
+  }
+  .status.live { background: rgba(43,110,79,0.1); color: var(--live); }
+  .status.soon { background: rgba(166,163,155,0.15); color: var(--soon); }
+  .card-desc { font-size: 0.92rem; color: var(--ink-soft); }
+  footer {
+    margin-top: 64px;
+    padding-top: 24px;
+    border-top: 1px solid var(--border);
+    font-size: 0.85rem;
+    color: var(--ink-soft);
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="eyebrow">C&amp;G Scaling</div>
+      <h1>Service Business Template Library</h1>
+      <p>Five distinct, non-generic website templates built for the most common service businesses in Oklahoma — reusable starting points for client sites.</p>
+    </header>
+
+    <div class="grid">
+      <a class="card" href="plumbing/">
+        <div class="card-top">
+          <span class="card-name">Plumbing</span>
+          <span class="status live">Live</span>
+        </div>
+        <p class="card-desc">Clean, trust-forward layout with a strong emergency-call CTA near the top.</p>
+      </a>
+
+      <div class="card soon">
+        <div class="card-top">
+          <span class="card-name">HVAC</span>
+          <span class="status soon">Coming soon</span>
+        </div>
+        <p class="card-desc">Seasonal urgency, before/after comfort framing.</p>
+      </div>
+
+      <a class="card" href="roofing/">
+        <div class="card-top">
+          <span class="card-name">Roofing</span>
+          <span class="status live">Live</span>
+        </div>
+        <p class="card-desc">Storm-damage restoration and craftsmanship, high-contrast with a pinned-hero scroll reveal.</p>
+      </a>
+
+      <div class="card soon">
+        <div class="card-top">
+          <span class="card-name">Pest Control</span>
+          <span class="status soon">Coming soon</span>
+        </div>
+        <p class="card-desc">Lighter, friendlier, more "in your home" tone.</p>
+      </div>
+
+      <a class="card" href="powerwashing/">
+        <div class="card-top">
+          <span class="card-name">Powerwashing</span>
+          <span class="status live">Live</span>
+        </div>
+        <p class="card-desc">Transformation-forward, before/after imagery as the hero.</p>
+      </a>
+    </div>
+
+    <footer>
+      Internal template library — not a live client site.
+    </footer>
+  </div>
+</body>
+</html>
